@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userinfo-app
+spec:
+  selector:
+    matchLabels:
+      app: userinfo-app
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: userinfo-app
+    spec:
+      containers:
+      - name: userinfo-app
+        image: 036414925941.dkr.ecr.ap-south-1.amazonaws.com/userinfo-chirag:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: menu-app
+spec:
+  selector:
+    matchLabels:
+      app: menu-app
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: menu-app
+    spec:
+      containers:
+      - name: menu-app
+        image: 036414925941.dkr.ecr.ap-south-1.amazonaws.com/menu-api:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-app
+spec:
+  selector:
+    matchLabels:
+      app: order-app
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: order-app
+    spec:
+      containers:
+      - name: order-app
+        image: 036414925941.dkr.ecr.ap-south-1.amazonaws.com/order-api:latest
+        ports:
+        - containerPort: 3000

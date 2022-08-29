@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: userinfo-service
+spec:
+  #Creating a service of type load balancer. Load balancer gets created but takes time to reflect
+  type: LoadBalancer
+  selector:
+    app: userinfo-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: menu-service
+spec:
+  #Creating a service of type load balancer. Load balancer gets created but takes time to reflect
+  type: LoadBalancer
+  selector:
+    app: menu-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+spec:
+  #Creating a service of type load balancer. Load balancer gets created but takes time to reflect
+  type: LoadBalancer
+  selector:
+    app: order-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000

@@ -1,0 +1,14 @@
+{
+    "name": "Alice",
+    "phone-number": "123456789",
+    "addresses": [
+        {
+            "id": 1,
+            "address": "Flat no 1-2-34, ",
+            "street": "xyz street",
+            "city": "kharagpur",
+            "state": "West Bengal",
+            "pincode": "721302"
+        }
+    ]
+}
